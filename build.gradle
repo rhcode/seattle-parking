@@ -1,0 +1,21 @@
+plugins {
+    id 'scala'
+    id 'application'
+}
+
+repositories {
+    jcenter()
+}
+
+application {
+    mainClassName = 'com.rh.seattle.parking.Driver'
+}
+
+dependencies {
+    implementation 'org.scala-lang:scala-library:2.12.8'
+
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.scalatest:scalatest_2.12:3.0.8'
+
+    testRuntimeOnly 'org.scala-lang.modules:scala-xml_2.12:1.2.0'
+}
