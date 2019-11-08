@@ -39,6 +39,11 @@ parking meters in each of these blocks across 15 minutes were summed up and inse
 
 Kibana was then hooked up the index that we created in elasticsearch and the visualization was created.
 
+#### Visualizations
+##### Popular parking spots
+![Popular parking spots](./images/popular-locations.png)
+
+
 #### Setting up
 ##### Elasticsearch
 Start up a docker instance of Elasticsearch 7.x
@@ -77,6 +82,3 @@ Navigate to http://localhost:5601/app/kibana in your browser
 
 Discover your elasticsearch index using instructions from https://www.elastic.co/guide/en/kibana/current/connect-to-elasticsearch.html
 
-#### Visualizations
-##### Popular parking spots
-![Popular parking spots](./images/popular-locations.png)
