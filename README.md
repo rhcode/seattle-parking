@@ -1,6 +1,7 @@
 ### Analyzing Seattle Parking Data
 The city of Seattle open data portal provides data about parking meters installed across the city. We use this data to
 analyze which spots are more popular and thus face more influx. 
+
 You can run this project locally. The instructions to setup the project are quick and specified in this file. 
 
 #### Data Format
@@ -75,3 +76,7 @@ docker run -d --link elasticsearch -p 5601:5601 --name kibana docker.elastic.co/
 Navigate to http://localhost:5601/app/kibana in your browser
 
 Discover your elasticsearch index using instructions from https://www.elastic.co/guide/en/kibana/current/connect-to-elasticsearch.html
+
+#### Visualizations
+##### Popular parking spots
+![Popular parking spots](./images/popular-locations.png)
