@@ -1,10 +1,10 @@
-### Analyzing Seattle Parking Data
+## Analyzing Seattle Parking Data
 The city of Seattle open data portal provides data about parking meters installed across the city. We use this data to
 analyze which spots are more popular and thus face more influx. 
 
 You can run this project locally. The instructions to setup the project are quick and specified in this file. 
 
-#### Data Format
+### Data Format
 Following are the columns present in the input data -
 - OccupancyDateTime: The date and time (minute) of the transaction as recorded
 - PaidOccupancy: The number of vehicles paid for parking at this time
@@ -19,7 +19,7 @@ Following are the columns present in the input data -
 - ParkingCategory: An overall description of the type of parking allowed on a blockface
 - Location: Geographical coordinates 
 
-#### Architecture
+### Architecture
 ```$xslt
                                +--------------------+                    +---------------------+                   +--------------------+
 Parking Meter                  |                    |                    |                     |                   |                    |
@@ -39,13 +39,17 @@ parking meters in each of these blocks across 15 minutes were summed up and inse
 
 Kibana was then hooked up the index that we created in elasticsearch and the visualization was created.
 
-#### Visualizations
-##### Popular parking spots
+### Visualizations
+#### Popular parking spots
 ![Popular parking spots](./images/popular-locations.png)
 
 
-#### Setting up
-##### Elasticsearch
+### Setting up
+#### Apache Flink
+There is no setup required for Apache Flink as we run locally in an embedded execution mode in a single JVM using the 
+dependency libraries we have declared.
+
+#### Elasticsearch
 Start up a docker instance of Elasticsearch 7.x
 ```bash
 docker pull docker.elastic.co/elasticsearch/elasticsearch:7.4.2
@@ -69,7 +73,7 @@ curl -XPUT "http://localhost:9200/seattle-parking-index3" -H 'Content-Type: appl
 }'
 ```
 
-##### Kibana
+#### Kibana
 Kibana 7.x is compatible with Elasticsearch 7.x. So we run a docker container with that version of Kibana. We need to
 make sure we link the two containers together.
 ```bash
@@ -81,4 +85,10 @@ docker run -d --link elasticsearch -p 5601:5601 --name kibana docker.elastic.co/
 Navigate to http://localhost:5601/app/kibana in your browser
 
 Discover your elasticsearch index using instructions from https://www.elastic.co/guide/en/kibana/current/connect-to-elasticsearch.html
+
+#### Running the application
+To run the application, simply navigate to the root of the repository and run
+```bash
+./gradlew run
+```
 

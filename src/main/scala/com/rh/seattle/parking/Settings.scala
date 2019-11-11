@@ -13,6 +13,10 @@ object Settings {
 
   val latenessTolerance = config.getInt("stream.latenessTolerance")
 
+  val filePath = config.getString("ingest.filePath")
+
+  val fieldSeparator = config.getString("ingest.fieldSeparator")
+
   object Sink {
     val esHost = config.getString("sink.host")
 

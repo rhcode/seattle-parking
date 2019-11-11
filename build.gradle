@@ -25,7 +25,7 @@ dependencies {
     compile group: 'com.typesafe', name: 'config', version: '1.4.0'
     compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
     compile group: "com.typesafe.scala-logging", name: "scala-logging_${scalaVersion}", version: "3.9.2"
-    compile group: 'org.apache.flink', name: 'flink-connector-elasticsearch6_2.12', version: '1.9.0'
+    compile group: "org.apache.flink", name: "flink-connector-elasticsearch6_${scalaVersion}", version: "1.9.0"
 
     testImplementation 'junit:junit:4.12'
     testImplementation "org.scalatest:scalatest_${scalaVersion}:3.0.8"

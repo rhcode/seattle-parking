@@ -19,10 +19,10 @@ object Driver extends App with LazyLogging {
   val env = StreamExecutionEnvironment.getExecutionEnvironment
   env.setStreamTimeCharacteristic(TimeCharacteristic.EventTime)
 
-  val text: DataStream[String] = env.readTextFile("./data/Paid_Parking_Nov_4_Downloaded.csv.gz")
+  val text: DataStream[String] = env.readTextFile(Settings.filePath)
 
   val parkingEventStream: DataStream[ParkingEvent] = text.flatMap { line =>
-    val tokens = line.split(',')
+    val tokens = line.split(Settings.fieldSeparator)
     ParkingEvent(tokens(0), tokens(11)) match {
       case Success(event) => Some(event)
       case Failure(_) =>
