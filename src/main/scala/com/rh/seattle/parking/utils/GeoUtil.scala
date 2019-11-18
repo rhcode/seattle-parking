@@ -1,4 +1,4 @@
-package com.rh.seattle.parking
+package com.rh.seattle.parking.utils
 
 import java.util.regex.Pattern
 

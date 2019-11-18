@@ -43,6 +43,10 @@ Kibana was then hooked up the index that we created in elasticsearch and the vis
 #### Popular parking spots
 ![Popular parking spots](./images/popular-locations.png)
 
+#### Paid occupancy ratio
+The graph below shows the degree of fullness of parking spots (the number of paid parking spots / total available spots) across time on
+an hourly basis
+![Paid occupancy ratio](./images/paid-occupancy-ratio.png)
 
 ### Setting up
 #### Apache Flink

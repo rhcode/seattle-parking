@@ -1,6 +1,7 @@
-package com.rh.seattle.parking
+package com.rh.seattle.parking.sinks
 
-import com.rh.seattle.parking.GeoUtil.GeoCoordinates
+import com.rh.seattle.parking.utils.GeoUtil.GeoCoordinates
+import com.rh.seattle.parking.Settings
 import org.apache.flink.api.common.functions.RuntimeContext
 import org.apache.flink.streaming.connectors.elasticsearch.{ElasticsearchSinkFunction, RequestIndexer}
 import org.elasticsearch.client.Requests
