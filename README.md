@@ -75,6 +75,16 @@ curl -XPUT "http://localhost:9200/seattle-parking-index3" -H 'Content-Type: appl
     }
  }
 }'
+
+curl -XPUT "http://localhost:9200/occupancy-index" -H 'Content-Type: application/json' -d'
+{
+ "mappings" : {
+   "properties" : {
+      "paidOccupancyRatio": {"type": "float"},
+      "time": {"type": "date"}
+    }
+ }
+}'
 ```
 
 #### Kibana
